@@ -16,6 +16,11 @@ Runtime: Node.js
  ```
  gcloud functions deploy <CF_NAME> <TRIGGER_TYPE> --region=<REGION_NAME> --runtime=<CF_RUNTIME>
  ```
+ Replace CF_NAME by your own name of this function.
+ Replace TRIGGER_TYPE by correct trigger type for current function. In this case it is `--trigger-http`
+ Replace REGION_NAME by region of current project.
+ Replace CF_RUNTIME by actual runtime, in our case is `nodejs16`.
+ 
  4. Check that the function deployed successfully: by command or through GCC UI.
  ```
  gcloud functions describe <CF_NAME> --region=<REGION_NAME>
