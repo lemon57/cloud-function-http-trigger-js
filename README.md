@@ -14,11 +14,13 @@ Runtime: Node.js
  2. Define Slack webhook url in `.env` file. You can find the webhook url -> [Slack channel webhook](https://api.slack.com/apps/A03FHHA7URG/incoming-webhooks?).
  3. Deploy this function to GC. Wait a few min :coffee:
  ```
- gcloud functions deploy <CF_NAME> <TRIGGER_TYPE> --region=<REGION_NAME> --runtime=<CF_RUNTIME>
+ gcloud functions deploy <CF_NAME> <TRIGGER_TYPE> \
+  --region=<REGION_NAME> \
+  --runtime=<CF_RUNTIME>
  ```
- Replace CF_NAME by your own name of this function.
- Replace TRIGGER_TYPE by correct trigger type for current function. In this case it is `--trigger-http`
- Replace REGION_NAME by region of current project.
+ Replace CF_NAME by your own name of this function.\
+ Replace TRIGGER_TYPE by correct trigger type for current function. In this case it is `--trigger-http`\
+ Replace REGION_NAME by region of current project, in our case is `europe-west1`\
  Replace CF_RUNTIME by actual runtime, in our case is `nodejs16`.
  
  4. Check that the function deployed successfully: by command or through GCC UI.
@@ -42,7 +44,7 @@ Runtime: Node.js
  ```
  gcloud functions logs read --execution-id=<EXECUTION_ID> --region=<REGION_NAME>
  ```
- Take `EXECUTION_ID` from the output after executing the commands: `gcloud functions call`.
+ Take `EXECUTION_ID` from the output after executing the command: `gcloud functions call`.
  7. Check slack channel `test-webshop-cf` 
 
  Enjoy :fireworks:
