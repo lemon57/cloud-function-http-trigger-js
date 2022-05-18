@@ -1,7 +1,10 @@
 # Cloud function with http trigger type
 Google Cloud Function triggered by HTTP call. It means that we can directly invoke the function via a HTTPs endpoint.
-Runtime: Node.js
+
 This function is simple example of cloud function with http trigger type which send message to Slack channel via webhook. 
+We will use test slack channel `test-webshop-cf` to test how this function works.
+
+Runtime: Node.js
 
 #### Guidebook to run this function
  1. Clone this repo
@@ -30,5 +33,6 @@ This function is simple example of cloud function with http trigger type which s
     -d '{"message":"Trigger GCF by curl command. By {your_name}"}' \
     https://<REGION>-<PROJECT_ID>.cloudfunctions.net/<NAME>
  ```
+ 6. Check slack channel `test-webshop-cf` 
 
  Enjoy :fireworks:
